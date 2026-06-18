@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manikürist Sınav Hazırlık — RevHill</title>
+  <meta name="description" content="MEB Manikürist sınavına en etkili hazırlık uygulaması. 10 deneme sınavı, 500 soru, flash kartlar ve hata takibi." />
+  <meta property="og:title" content="Manikürist Sınav Hazırlık" />
+  <meta property="og:description" content="MEB Manikürist sınavına en etkili hazırlık uygulaması." />
+  <meta property="og:image" content="https://revhill.com/assets/og-image.png" />
+  <meta property="og:url" content="https://revhill.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/assets/icon.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#D4698A',
+            primaryLight: '#F2B8CB',
+            primaryBg: '#FFF0F5',
+            dark: '#2D1F28',
+            muted: '#9B7A88',
+            examDark: '#1C1220',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    .font-display { font-family: 'Playfair Display', serif; }
+    .phone-frame {
+      background: #1C1220;
+      border-radius: 44px;
+      box-shadow: 0 0 0 8px #2D1F28, 0 30px 80px rgba(212,105,138,0.3);
+      overflow: hidden;
+    }
+    .glow { background: radial-gradient(ellipse at center, rgba(212,105,138,0.25) 0%, transparent 70%); }
+    [data-lang] { display: none; }
+    [data-lang="tr"] { display: block; }
+    html[lang="en"] [data-lang="tr"] { display: none; }
+    html[lang="en"] [data-lang="en"] { display: block; }
+    .lang-btn.active { background: #D4698A; color: white; }
+  </style>
+</head>
+<body class="bg-white text-dark font-sans">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-pink-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="font-display text-xl text-dark">RevHill</span>
+        <span class="text-xs text-muted font-medium px-2 py-0.5 bg-primaryBg rounded-full border border-pink-200">Global</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- Lang toggle -->
+        <div class="flex rounded-full border border-pink-200 overflow-hidden text-sm font-medium">
+          <button onclick="setLang('tr')" id="btn-tr" class="lang-btn active px-3 py-1.5 transition-colors">TR</button>
+          <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1.5 transition-colors text-muted">EN</button>
+        </div>
+        <a href="/support.html" class="text-sm text-muted hover:text-primary transition-colors">
+          <span data-lang="tr">Destek</span>
+          <span data-lang="en">Support</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 px-6 relative overflow-hidden">
+    <div class="glow absolute inset-0 pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Text -->
+      <div>
+        <div class="inline-flex items-center gap-2 bg-primaryBg border border-pink-200 rounded-full px-4 py-2 text-sm text-primary font-medium mb-6">
+          <span>✦</span>
+          <span data-lang="tr">MEB Onaylı Müfredat</span>
+          <span data-lang="en">MEB Approved Curriculum</span>
+        </div>
+
+        <h1 class="font-display text-5xl md:text-6xl text-dark leading-tight mb-6">
+          <span data-lang="tr">Manikürist<br/>Sınavına<br/><span class="text-primary">Hazırlan</span></span>
+          <span data-lang="en">Prepare for<br/>Your Nail Tech<br/><span class="text-primary">Exam</span></span>
+        </h1>
+
+        <p class="text-lg text-muted leading-relaxed mb-8">
+          <span data-lang="tr">500 gerçek sınav sorusu, flash kartlar ve hata takip sistemi ile MEB Manikürist sınavını ilk seferde geçin.</span>
+          <span data-lang="en">Pass the MEB Nail Technician exam on your first try with 500 real exam questions, flash cards, and mistake tracking.</span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#download" class="inline-flex items-center justify-center gap-2 bg-dark text-white px-6 py-4 rounded-2xl font-semibold hover:bg-examDark transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span data-lang="tr">App Store'dan İndir</span>
+            <span data-lang="en">Download on App Store</span>
+          </a>
+          <a href="#features" class="inline-flex items-center justify-center gap-2 border-2 border-pink-200 text-dark px-6 py-4 rounded-2xl font-semibold hover:border-primary hover:text-primary transition-colors">
+            <span data-lang="tr">Özellikleri Gör</span>
+            <span data-lang="en">See Features</span>
+          </a>
+        </div>
+
+        <p class="text-xs text-muted mt-4">
+          <span data-lang="tr">✓ Tek seferlik ödeme · Süresiz erişim · Güncelleme dahil</span>
+          <span data-lang="en">✓ One-time payment · Lifetime access · Updates included</span>
+        </p>
+      </div>
+
+      <!-- Right: Phone mockup -->
+      <div class="flex justify-center">
+        <div class="phone-frame w-64 md:w-72" style="aspect-ratio: 9/19;">
+          <!-- Status bar -->
+          <div class="bg-examDark px-5 pt-3 pb-1 flex justify-between items-center">
+            <span class="text-white text-xs font-medium">9:41</span>
+            <div class="w-20 h-5 bg-black rounded-full mx-auto absolute left-1/2 -translate-x-1/2 top-1"></div>
+            <div class="flex gap-1 items-center">
+              <div class="w-3 h-2 border border-white/60 rounded-sm"><div class="bg-white/60 h-full w-3/4 rounded-sm"></div></div>
+            </div>
+          </div>
+          <!-- App screen: Dashboard -->
+          <div class="bg-primaryBg p-4 h-full overflow-hidden">
+            <div class="text-xs text-muted mb-1 font-medium">Hoş geldin 👋</div>
+            <div class="font-display text-dark text-base mb-3">Sınav Hazırlığın</div>
+            <!-- Stats -->
+            <div class="bg-white rounded-xl p-3 mb-3 flex justify-around shadow-sm border border-pink-100">
+              <div class="text-center"><div class="font-bold text-primary text-lg">12</div><div class="text-muted text-xs">Çözülen</div></div>
+              <div class="w-px bg-pink-100"></div>
+              <div class="text-center"><div class="font-bold text-dark text-lg">%78</div><div class="text-muted text-xs">En İyi</div></div>
+              <div class="w-px bg-pink-100"></div>
+              <div class="text-center"><div class="font-bold text-green-500 text-lg">8</div><div class="text-muted text-xs">Başarılı</div></div>
+            </div>
+            <!-- Exam card -->
+            <div class="rounded-xl p-3 mb-2 overflow-hidden relative" style="background:#1C1220;">
+              <div class="text-pink-300 text-xs font-semibold mb-1">✦ ÜCRETSİZ</div>
+              <div class="text-white font-bold text-sm mb-0.5">Deneme Sınavı 1</div>
+              <div class="text-white/50 text-xs mb-2">50 soru · 60 dakika</div>
+              <div class="bg-primary inline-block text-white text-xs font-semibold px-3 py-1.5 rounded-lg">Başla →</div>
+            </div>
+            <!-- Locked cards -->
+            {['2','3','4'].map ? ['2','3','4'] : ['2','3','4']}
+            <div class="bg-white rounded-xl p-2.5 mb-1.5 flex items-center gap-2 border border-pink-100">
+              <div class="w-7 h-7 bg-pink-50 rounded-lg flex items-center justify-center text-sm">🔒</div>
+              <div class="flex-1"><div class="text-dark text-xs font-semibold">Deneme Sınavı 2</div><div class="text-muted text-xs">Premium</div></div>
+              <div class="bg-primaryBg text-primary text-xs font-semibold px-2 py-0.5 rounded-full">Pro</div>
+            </div>
+            <div class="bg-white rounded-xl p-2.5 mb-1.5 flex items-center gap-2 border border-pink-100">
+              <div class="w-7 h-7 bg-pink-50 rounded-lg flex items-center justify-center text-sm">🔒</div>
+              <div class="flex-1"><div class="text-dark text-xs font-semibold">Deneme Sınavı 3</div><div class="text-muted text-xs">Premium</div></div>
+              <div class="bg-primaryBg text-primary text-xs font-semibold px-2 py-0.5 rounded-full">Pro</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="font-display text-4xl text-dark mb-4">
+          <span data-lang="tr">Her şey tek uygulamada</span>
+          <span data-lang="en">Everything in one app</span>
+        </h2>
+        <p class="text-muted text-lg">
+          <span data-lang="tr">Sınavı geçmek için ihtiyacın olan tüm araçlar</span>
+          <span data-lang="en">All the tools you need to pass the exam</span>
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-primaryBg rounded-2xl p-6 border border-pink-200">
+          <div class="text-3xl mb-4">📝</div>
+          <h3 class="font-semibold text-dark text-lg mb-2">
+            <span data-lang="tr">10 Deneme Sınavı</span>
+            <span data-lang="en">10 Practice Exams</span>
+          </h3>
+          <p class="text-muted text-sm leading-relaxed">
+            <span data-lang="tr">500 gerçek sınav sorusu. 60 dakika süre, 50 soru, %70 geçme eşiği.</span>
+            <span data-lang="en">500 real exam questions. 60 minutes, 50 questions, 70% passing threshold.</span>
+          </p>
+        </div>
+
+        <div class="bg-primaryBg rounded-2xl p-6 border border-pink-200">
+          <div class="text-3xl mb-4">🃏</div>
+          <h3 class="font-semibold text-dark text-lg mb-2">Flash Kartlar</h3>
+          <p class="text-muted text-sm leading-relaxed">
+            <span data-lang="tr">Tüm kategorilerde soru-cevap kartları. Çevirerek öğren.</span>
+            <span data-lang="en">Question-answer cards across all categories. Learn by flipping.</span>
+          </p>
+        </div>
+
+        <div class="bg-primaryBg rounded-2xl p-6 border border-pink-200">
+          <div class="text-3xl mb-4">📌</div>
+          <h3 class="font-semibold text-dark text-lg mb-2">
+            <span data-lang="tr">Hatalarım</span>
+            <span data-lang="en">My Mistakes</span>
+          </h3>
+          <p class="text-muted text-sm leading-relaxed">
+            <span data-lang="tr">Yanlış veya boş bıraktığın sorular otomatik kaydedilir. Doğru çözünce listeden silinir.</span>
+            <span data-lang="en">Wrong or blank questions saved automatically. Removed when answered correctly.</span>
+          </p>
+        </div>
+
+        <div class="bg-primaryBg rounded-2xl p-6 border border-pink-200">
+          <div class="text-3xl mb-4">♾️</div>
+          <h3 class="font-semibold text-dark text-lg mb-2">
+            <span data-lang="tr">Tek Ödeme</span>
+            <span data-lang="en">One-Time Payment</span>
+          </h3>
+          <p class="text-muted text-sm leading-relaxed">
+            <span data-lang="tr">Aylık abonelik yok. Bir kez öde, sonsuza kadar kullan.</span>
+            <span data-lang="en">No monthly subscription. Pay once, use forever.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats section -->
+  <section class="py-20 px-6" style="background:#1C1220;">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-display text-4xl text-white mb-12">
+        <span data-lang="tr">Rakamlarla hazırlık</span>
+        <span data-lang="en">Preparation by the numbers</span>
+      </h2>
+      <div class="grid grid-cols-3 gap-8">
+        <div>
+          <div class="font-display text-5xl text-primary mb-2">500</div>
+          <div class="text-white/60 text-sm">
+            <span data-lang="tr">Soru</span>
+            <span data-lang="en">Questions</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-display text-5xl text-primary mb-2">10</div>
+          <div class="text-white/60 text-sm">
+            <span data-lang="tr">Deneme Sınavı</span>
+            <span data-lang="en">Practice Exams</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-display text-5xl text-primary mb-2">%70</div>
+          <div class="text-white/60 text-sm">
+            <span data-lang="tr">Geçme Eşiği</span>
+            <span data-lang="en">Passing Threshold</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA -->
+  <section id="download" class="py-24 px-6 bg-primaryBg">
+    <div class="max-w-xl mx-auto text-center">
+      <div class="w-20 h-20 bg-white rounded-3xl shadow-lg flex items-center justify-center text-4xl mx-auto mb-6 border border-pink-100">💅</div>
+      <h2 class="font-display text-4xl text-dark mb-4">
+        <span data-lang="tr">Hemen başla</span>
+        <span data-lang="en">Get started now</span>
+      </h2>
+      <p class="text-muted mb-8">
+        <span data-lang="tr">İlk deneme sınavı ücretsiz. Kredi kartı gerekmez.</span>
+        <span data-lang="en">First practice exam is free. No credit card required.</span>
+      </p>
+      <a href="#" class="inline-flex items-center gap-3 bg-dark text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-examDark transition-colors">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span data-lang="tr">App Store'dan İndir</span>
+        <span data-lang="en">Download on App Store</span>
+      </a>
+      <p class="text-xs text-muted mt-4">
+        <span data-lang="tr">Yakında Google Play'de de</span>
+        <span data-lang="en">Coming soon to Google Play</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+        <div>
+          <div class="font-display text-white text-xl mb-2">RevHill Global Holdings LLC</div>
+          <div class="text-white/40 text-sm leading-relaxed">
+            6545 Market Ave N Ste 100<br/>
+            Canton, OH, United States<br/>
+            +1 773 505 7443<br/>
+            system@revhill.com
+          </div>
+        </div>
+        <div class="flex gap-12">
+          <div>
+            <div class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">
+              <span data-lang="tr">Ürün</span>
+              <span data-lang="en">Product</span>
+            </div>
+            <ul class="space-y-2 text-sm text-white/40">
+              <li><a href="#features" class="hover:text-white/70 transition-colors">
+                <span data-lang="tr">Özellikler</span>
+                <span data-lang="en">Features</span>
+              </a></li>
+              <li><a href="#download" class="hover:text-white/70 transition-colors">
+                <span data-lang="tr">İndir</span>
+                <span data-lang="en">Download</span>
+              </a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">
+              <span data-lang="tr">Yasal</span>
+              <span data-lang="en">Legal</span>
+            </div>
+            <ul class="space-y-2 text-sm text-white/40">
+              <li><a href="/privacy-policy.html" class="hover:text-white/70 transition-colors">
+                <span data-lang="tr">Gizlilik Politikası</span>
+                <span data-lang="en">Privacy Policy (TR)</span>
+              </a></li>
+              <li><a href="/privacy-policy-en.html" class="hover:text-white/70 transition-colors">Privacy Policy (EN)</a></li>
+              <li><a href="/support.html" class="hover:text-white/70 transition-colors">
+                <span data-lang="tr">Destek</span>
+                <span data-lang="en">Support</span>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <p class="text-white/30 text-sm">© 2026 RevHill Global Holdings LLC.
+          <span data-lang="tr">Tüm hakları saklıdır.</span>
+          <span data-lang="en">All rights reserved.</span>
+        </p>
+        <p class="text-white/20 text-xs">
+          <span data-lang="tr">Önceden çıkmış sorular ile benzer soruların çıkması muhtemel olduğu değerlendirilerek hazırlanmıştır.</span>
+          <span data-lang="en">Prepared based on questions likely to appear on the exam.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-tr').classList.toggle('text-muted', lang !== 'tr');
+      document.getElementById('btn-en').classList.toggle('text-muted', lang !== 'en');
+    }
+    // Init
+    document.addEventListener('DOMContentLoaded', () => setLang('tr'));
+  </script>
+</body>
+</html>
