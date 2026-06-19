@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — RevHill Global Holdings LLC</title>
+  <meta name="description" content="RevHill Global Holdings LLC is a software company based in Canton, Ohio, developing mobile applications for professional certification exam preparation." />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { primary: '#D4698A', dark: '#2D1F28', muted: '#9B7A88', primaryBg: '#FFF0F5' } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>.font-display { font-family: 'Playfair Display', serif; }</style>
+</head>
+<body class="bg-white text-dark" style="font-family: Inter, sans-serif;">
+
+  <nav class="border-b border-pink-100 px-6 py-4">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="/" class="font-display text-xl" style="color:#2D1F28;">RevHill</a>
+      <div class="flex gap-6 text-sm" style="color:#9B7A88;">
+        <a href="/" class="hover:text-primary" style="color:inherit;">Home</a>
+        <a href="/about.html" style="color:#D4698A;">About</a>
+        <a href="/support.html" class="hover:text-primary" style="color:inherit;">Support</a>
+        <a href="/privacy-policy-en.html" class="hover:text-primary" style="color:inherit;">Privacy</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 py-20">
+
+    <div class="mb-16">
+      <p class="text-sm mb-3" style="color:#D4698A; font-weight:600; letter-spacing:0.05em;">ABOUT THE COMPANY</p>
+      <h1 class="font-display text-5xl mb-6" style="color:#2D1F28;">RevHill Global<br/>Holdings LLC</h1>
+      <p class="text-xl leading-relaxed max-w-2xl" style="color:#9B7A88;">
+        We build mobile applications that help professionals in Turkey and beyond prepare for government-administered certification exams. Our products are available on the Apple App Store and Google Play.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 mb-20">
+      <div>
+        <h2 class="text-2xl font-semibold mb-4" style="color:#2D1F28;">What We Do</h2>
+        <p class="leading-relaxed mb-4" style="color:#9B7A88;">
+          RevHill develops exam preparation software for vocational and professional certification programs regulated by the Turkish Ministry of National Education (MEB — Milli Eğitim Bakanlığı).
+        </p>
+        <p class="leading-relaxed" style="color:#9B7A88;">
+          Our flagship product, <strong style="color:#2D1F28;">Manikürist Sınav Hazırlık</strong>, is a mobile app that provides practice exams, flashcards, and performance analytics for candidates preparing for the MEB Manicurist certification exam.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-4" style="color:#2D1F28;">Our Approach</h2>
+        <p class="leading-relaxed mb-4" style="color:#9B7A88;">
+          We prioritize user privacy: our apps are fully offline-first, storing all data locally on the user's device. We do not collect personal information, require account registration, or use advertising networks.
+        </p>
+        <p class="leading-relaxed" style="color:#9B7A88;">
+          In-app purchases are handled securely through Apple App Store and Google Play using RevenueCat, a trusted payment infrastructure provider.
+        </p>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="mb-20">
+      <h2 class="text-2xl font-semibold mb-8" style="color:#2D1F28;">Our Products</h2>
+      <div class="border border-pink-100 rounded-2xl p-8 flex gap-6 items-start" style="background:#FFF0F5;">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:#D4698A;">
+          <span style="font-size:28px;">💅</span>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2" style="color:#2D1F28;">Manikürist Sınav Hazırlık</h3>
+          <p class="mb-4" style="color:#9B7A88;">
+            MEB Manicurist (Manikürist) certification exam preparation app for iOS and Android. Features 10 full-length practice exams (500 questions), flashcard study mode, wrong-answer review, and detailed score tracking.
+          </p>
+          <div class="flex gap-3 flex-wrap">
+            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:white; border:1px solid #F2B8CB; color:#D4698A;">iOS</span>
+            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:white; border:1px solid #F2B8CB; color:#D4698A;">Android</span>
+            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:white; border:1px solid #F2B8CB; color:#D4698A;">Turkish</span>
+            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:white; border:1px solid #F2B8CB; color:#D4698A;">Offline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Company info -->
+    <div class="grid md:grid-cols-2 gap-8 mb-20">
+      <div class="rounded-2xl p-8" style="background:#f9f9f9;">
+        <h3 class="text-lg font-semibold mb-4" style="color:#2D1F28;">Company Information</h3>
+        <dl class="space-y-3 text-sm">
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Legal Name</dt>
+            <dd style="color:#9B7A88;">RevHill Global Holdings LLC</dd>
+          </div>
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Entity Type</dt>
+            <dd style="color:#9B7A88;">Limited Liability Company (LLC)</dd>
+          </div>
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Country</dt>
+            <dd style="color:#9B7A88;">United States of America</dd>
+          </div>
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Industry</dt>
+            <dd style="color:#9B7A88;">Mobile Software / EdTech</dd>
+          </div>
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Website</dt>
+            <dd><a href="https://revhill.com" style="color:#D4698A;">revhill.com</a></dd>
+          </div>
+        </dl>
+      </div>
+      <div class="rounded-2xl p-8" style="background:#f9f9f9;">
+        <h3 class="text-lg font-semibold mb-4" style="color:#2D1F28;">Contact</h3>
+        <dl class="space-y-3 text-sm">
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Registered Address</dt>
+            <dd style="color:#9B7A88;">6545 Market Ave N Ste 100<br/>Canton, OH 44721<br/>United States</dd>
+          </div>
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Email</dt>
+            <dd><a href="mailto:system@revhill.com" style="color:#D4698A;">system@revhill.com</a></dd>
+          </div>
+          <div>
+            <dt class="font-medium" style="color:#2D1F28;">Phone</dt>
+            <dd style="color:#9B7A88;">+1 773 505 7443</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-semibold mb-8" style="color:#2D1F28;">Our Commitments</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-pink-100">
+          <div class="text-3xl mb-4">🔒</div>
+          <h4 class="font-semibold mb-2" style="color:#2D1F28;">Privacy First</h4>
+          <p class="text-sm leading-relaxed" style="color:#9B7A88;">No accounts, no tracking, no ads. All user data stays on-device.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-pink-100">
+          <div class="text-3xl mb-4">📚</div>
+          <h4 class="font-semibold mb-2" style="color:#2D1F28;">Accurate Content</h4>
+          <p class="text-sm leading-relaxed" style="color:#9B7A88;">Questions sourced from official MEB exam materials and published guides.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-pink-100">
+          <div class="text-3xl mb-4;">🌍</div>
+          <h4 class="font-semibold mb-2" style="color:#2D1F28;">Accessible Pricing</h4>
+          <p class="text-sm leading-relaxed" style="color:#9B7A88;">One-time lifetime purchase. No subscriptions, no recurring charges.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-pink-100 py-8 px-6 mt-16">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between gap-2 text-sm" style="color:#9B7A88;">
+      <span>© 2026 RevHill Global Holdings LLC. All rights reserved.</span>
+      <div class="flex gap-4">
+        <a href="/" class="hover:text-primary" style="color:inherit;">Home</a>
+        <a href="/about.html" style="color:#D4698A;">About</a>
+        <a href="/privacy-policy-en.html" class="hover:text-primary" style="color:inherit;">Privacy</a>
+        <a href="/support.html" class="hover:text-primary" style="color:inherit;">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
