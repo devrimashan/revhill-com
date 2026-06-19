@@ -19,9 +19,9 @@
     details[open] .chevron { transform: rotate(180deg); }
     .chevron { transition: transform 0.2s; }
     [data-lang] { display: none; }
-    [data-lang="tr"] { display: block; }
+    [data-lang="tr"] { display: revert; }
     html[lang="en"] [data-lang="tr"] { display: none; }
-    html[lang="en"] [data-lang="en"] { display: block; }
+    html[lang="en"] [data-lang="en"] { display: revert; }
     .lang-btn.active { background: #D4698A; color: white; }
   </style>
 </head>

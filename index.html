@@ -43,9 +43,9 @@
     }
     .glow { background: radial-gradient(ellipse at center, rgba(212,105,138,0.25) 0%, transparent 70%); }
     [data-lang] { display: none; }
-    [data-lang="tr"] { display: block; }
+    [data-lang="tr"] { display: revert; }
     html[lang="en"] [data-lang="tr"] { display: none; }
-    html[lang="en"] [data-lang="en"] { display: block; }
+    html[lang="en"] [data-lang="en"] { display: revert; }
     .lang-btn.active { background: #D4698A; color: white; }
   </style>
 </head>
