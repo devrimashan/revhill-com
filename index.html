@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manikürist Sınav Hazırlık — RevHill</title>
-  <meta name="description" content="MEB Manikürist sınavına en etkili hazırlık uygulaması. 10 deneme sınavı, 500 soru, flash kartlar ve hata takibi." />
-  <meta property="og:title" content="Manikürist Sınav Hazırlık" />
-  <meta property="og:description" content="MEB Manikürist sınavına en etkili hazırlık uygulaması." />
+  <title>Manicurist Exam Prep — RevHill</title>
+  <meta name="description" content="The most effective preparation app for the MEB Manicurist certification exam. 10 practice exams, 500 questions, flashcards and mistake tracking." />
+  <meta property="og:title" content="Manicurist Exam Prep — RevHill" />
+  <meta property="og:description" content="Prepare for the MEB Manicurist certification exam with 500 questions and 10 full practice exams." />
   <meta property="og:image" content="https://revhill.com/assets/og-image.png" />
   <meta property="og:url" content="https://revhill.com" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="shortcut icon" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <link rel="shortcut icon" href="/assets/favicon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -61,8 +63,8 @@
       <div class="flex items-center gap-3">
         <!-- Lang toggle -->
         <div class="flex rounded-full border border-pink-200 overflow-hidden text-sm font-medium">
-          <button onclick="setLang('tr')" id="btn-tr" class="lang-btn active px-3 py-1.5 transition-colors">TR</button>
-          <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1.5 transition-colors text-muted">EN</button>
+          <button onclick="setLang('tr')" id="btn-tr" class="lang-btn px-3 py-1.5 transition-colors text-muted">TR</button>
+          <button onclick="setLang('en')" id="btn-en" class="lang-btn active px-3 py-1.5 transition-colors">EN</button>
         </div>
         <a href="/about.html" class="text-sm text-muted hover:text-primary transition-colors">About</a>
         <a href="/support.html" class="text-sm text-muted hover:text-primary transition-colors">
@@ -353,7 +355,7 @@
       document.getElementById('btn-en').classList.toggle('text-muted', lang !== 'en');
     }
     // Init
-    document.addEventListener('DOMContentLoaded', () => setLang('tr'));
+    document.addEventListener('DOMContentLoaded', () => setLang('en'));
   </script>
 </body>
 </html>

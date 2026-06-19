@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Destek — RevHill Manikürist Sınav Hazırlık</title>
+  <title>Support — RevHill Manicurist Exam Prep</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <link rel="shortcut icon" href="/assets/favicon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -31,8 +34,8 @@
     <div class="max-w-3xl mx-auto flex justify-between items-center">
       <a href="/" class="font-display text-xl" style="color:#2D1F28;">RevHill</a>
       <div class="flex rounded-full border border-pink-200 overflow-hidden text-sm font-medium">
-        <button onclick="setLang('tr')" id="btn-tr" class="lang-btn active px-3 py-1.5 transition-colors">TR</button>
-        <button onclick="setLang('en')" id="btn-en" class="lang-btn px-3 py-1.5 transition-colors" style="color:#9B7A88;">EN</button>
+        <button onclick="setLang('tr')" id="btn-tr" class="lang-btn px-3 py-1.5 transition-colors" style="color:#9B7A88;">TR</button>
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn active px-3 py-1.5 transition-colors">EN</button>
       </div>
     </div>
   </nav>
@@ -226,23 +229,99 @@
 
     </div>
 
-    <!-- Still need help -->
-    <div class="mt-12 text-center rounded-2xl p-8 border border-pink-200" style="background:#FFF0F5;">
-      <div class="text-3xl mb-3">💬</div>
-      <h3 class="font-semibold text-lg mb-2" style="color:#2D1F28;">
-        <span data-lang="tr">Hâlâ yardıma mı ihtiyacınız var?</span>
-        <span data-lang="en">Still need help?</span>
-      </h3>
-      <p class="text-sm mb-5" style="color:#9B7A88;">
+    <!-- Contact Form -->
+    <div class="mt-14">
+      <h2 class="font-semibold text-xl mb-2" style="color:#2D1F28;">
+        <span data-lang="tr">Bize Ulaşın</span>
+        <span data-lang="en">Contact Us</span>
+      </h2>
+      <p class="text-sm mb-6" style="color:#9B7A88;">
         <span data-lang="tr">1-2 iş günü içinde yanıt veriyoruz.</span>
-        <span data-lang="en">We respond within 1-2 business days.</span>
+        <span data-lang="en">We typically respond within 1-2 business days.</span>
       </p>
-      <a href="mailto:system@revhill.com?subject=Manikurist%20Sinav%20Destek"
-         class="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-xl"
-         style="background:#D4698A;">
-        <span data-lang="tr">E-posta Gönder</span>
-        <span data-lang="en">Send Email</span>
-      </a>
+
+      <form id="contactForm" onsubmit="handleSubmit(event)" class="space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1.5" style="color:#2D1F28;">
+              <span data-lang="tr">Adınız</span>
+              <span data-lang="en">Your Name</span>
+            </label>
+            <input type="text" id="fname" required
+              class="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all"
+              style="border-color:#F2B8CB; background:#fff; color:#2D1F28;"
+              onfocus="this.style.borderColor='#D4698A'; this.style.boxShadow='0 0 0 3px rgba(212,105,138,0.15)'"
+              onblur="this.style.borderColor='#F2B8CB'; this.style.boxShadow='none'"
+              placeholder="Jane Doe" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1.5" style="color:#2D1F28;">
+              <span data-lang="tr">E-posta</span>
+              <span data-lang="en">Email</span>
+            </label>
+            <input type="email" id="femail" required
+              class="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all"
+              style="border-color:#F2B8CB; background:#fff; color:#2D1F28;"
+              onfocus="this.style.borderColor='#D4698A'; this.style.boxShadow='0 0 0 3px rgba(212,105,138,0.15)'"
+              onblur="this.style.borderColor='#F2B8CB'; this.style.boxShadow='none'"
+              placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1.5" style="color:#2D1F28;">
+            <span data-lang="tr">Konu</span>
+            <span data-lang="en">Subject</span>
+          </label>
+          <select id="fsubject"
+            class="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all"
+            style="border-color:#F2B8CB; background:#fff; color:#2D1F28;"
+            onfocus="this.style.borderColor='#D4698A'"
+            onblur="this.style.borderColor='#F2B8CB'">
+            <option value="purchase">
+              Purchase / Payment Issue
+            </option>
+            <option value="restore">Restore Purchases</option>
+            <option value="technical">Technical Problem</option>
+            <option value="content">Question / Content Feedback</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1.5" style="color:#2D1F28;">
+            <span data-lang="tr">Mesajınız</span>
+            <span data-lang="en">Message</span>
+          </label>
+          <textarea id="fmessage" rows="4" required
+            class="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all resize-none"
+            style="border-color:#F2B8CB; background:#fff; color:#2D1F28;"
+            onfocus="this.style.borderColor='#D4698A'; this.style.boxShadow='0 0 0 3px rgba(212,105,138,0.15)'"
+            onblur="this.style.borderColor='#F2B8CB'; this.style.boxShadow='none'"
+            placeholder="Describe your issue or question..."></textarea>
+        </div>
+
+        <button type="submit"
+          class="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-xl transition-opacity hover:opacity-90"
+          style="background:#D4698A;">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span data-lang="tr">Gönder</span>
+          <span data-lang="en">Send Message</span>
+        </button>
+
+        <div id="formSuccess" class="hidden rounded-xl p-4 text-sm font-medium" style="background:#F0FAF4; color:#2E7D52; border:1px solid rgba(46,125,82,0.25);">
+          ✓ <span data-lang="tr">Mesajınız iletildi. En kısa sürede yanıt vereceğiz.</span>
+          <span data-lang="en">Your message has been sent. We'll get back to you shortly.</span>
+        </div>
+      </form>
+
+      <p class="mt-4 text-xs" style="color:#9B7A88;">
+        <span data-lang="tr">Veya doğrudan e-posta gönderin:</span>
+        <span data-lang="en">Or email us directly:</span>
+        <a href="mailto:system@revhill.com" style="color:#D4698A;">system@revhill.com</a>
+      </p>
     </div>
 
   </main>
@@ -272,7 +351,20 @@
       document.getElementById('btn-tr').style.color = lang === 'tr' ? 'white' : '#9B7A88';
       document.getElementById('btn-en').style.color = lang === 'en' ? 'white' : '#9B7A88';
     }
-    document.addEventListener('DOMContentLoaded', () => setLang('tr'));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name    = document.getElementById('fname').value;
+      const email   = document.getElementById('femail').value;
+      const subject = document.getElementById('fsubject').value;
+      const message = document.getElementById('fmessage').value;
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`);
+      window.location.href = `mailto:system@revhill.com?subject=App%20Support%20-%20${encodeURIComponent(subject)}&body=${body}`;
+      document.getElementById('formSuccess').classList.remove('hidden');
+      document.getElementById('contactForm').reset();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => setLang('en'));
   </script>
 </body>
 </html>
